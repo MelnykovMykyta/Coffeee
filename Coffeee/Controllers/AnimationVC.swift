@@ -13,6 +13,7 @@ import Lottie
 class AnimationVC: UIViewController {
     
     private var animatedView: LottieAnimationView!
+    private var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +34,23 @@ private extension AnimationVC {
         animatedView.contentMode = .scaleAspectFit
         view.addSubview(animatedView)
         
+        label = UILabel()
+        label.text = D.Texts.animation
+        label.font = UIFont(name: "Impact", size: 80)
+        label.adjustsFontSizeToFitWidth = true
+        label.textColor = D.Colors.nameColor
+        label.textAlignment = .center
+        view.addSubview(label)
+        
         animatedView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.horizontalEdges.equalToSuperview()
+            $0.width.equalToSuperview().multipliedBy(0.7)
+            $0.height.equalTo(animatedView.snp.width)
+        }
+        
+        label.snp.makeConstraints {
+            $0.top.equalTo(animatedView.snp.bottom).inset(-20)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
     }
     
@@ -43,8 +58,9 @@ private extension AnimationVC {
         animatedView.play(fromProgress: 0, toProgress: 0.9) { completed in
             UIView.animate(withDuration: 1, animations: {
                 self.animatedView.alpha = 0
+                self.label.alpha = 0
             }) { _ in
-                VCChanger.changeVC(vc: NavTabBarController())
+                FirstLaunchChecker.check()
             }
         }
     }

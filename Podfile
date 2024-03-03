@@ -14,6 +14,7 @@ target 'Coffeee' do
   pod 'RxRealm' 
   pod 'RealmSwift'
   pod 'PTCardTabBar'
+  pod 'OnboardKit'
 
   # Set the minimum iOS version to 13.0
 
