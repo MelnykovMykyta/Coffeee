@@ -44,7 +44,7 @@ private extension AnimationVC {
             UIView.animate(withDuration: 1, animations: {
                 self.animatedView.alpha = 0
             }) { _ in
-                VCChanger.changeVC(vc: MainVC())
+                VCChanger.changeVC(vc: NavTabBarController())
             }
         }
     }
