@@ -15,6 +15,9 @@ target 'Coffeee' do
   pod 'RealmSwift'
   pod 'PTCardTabBar'
   pod 'OnboardKit'
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
 
   # Set the minimum iOS version to 13.0
 
