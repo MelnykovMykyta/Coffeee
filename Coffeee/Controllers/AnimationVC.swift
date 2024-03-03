@@ -29,8 +29,7 @@ private extension AnimationVC {
     func setupView() {
         view.backgroundColor = D.Colors.mainBackgroundColor
         
-        animatedView = LottieAnimationView(name: "CoffeeeAnimation")
-        animatedView.animationSpeed = 2
+        animatedView = LottieAnimationView(name: "Animation")
         animatedView.contentMode = .scaleAspectFit
         view.addSubview(animatedView)
         
@@ -42,7 +41,7 @@ private extension AnimationVC {
     
     func animation() {
         animatedView.play(fromProgress: 0, toProgress: 0.9) { completed in
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 1, animations: {
                 self.animatedView.alpha = 0
             }) { _ in
                 VCChanger.changeVC(vc: MainVC())
