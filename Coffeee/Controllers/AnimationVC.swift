@@ -36,7 +36,7 @@ private extension AnimationVC {
         
         label = UILabel()
         label.text = D.Texts.animation
-        label.font = UIFont(name: "Impact", size: 80)
+        label.font = UIFont(name: "URWGeometric-SemiBold", size: 80)
         label.adjustsFontSizeToFitWidth = true
         label.textColor = D.Colors.nameColor
         label.textAlignment = .center

@@ -14,7 +14,7 @@ class FirstLaunchChecker {
         let firstLaunch = UserDefaults.standard.bool(forKey: "firstLaunch")
         
         if firstLaunch  {
-            VCChanger.changeVC(vc: NavTabBarController())
+            AuthViewModel.checkAuthentication()
         } else {
             UserDefaults.standard.set(true, forKey: "firstLaunch")
             VCChanger.changeVC(vc: GuideVC())

@@ -7,10 +7,15 @@
 
 import Foundation
 import UIKit
+import SnapKit
+import SDWebImage
 
 class QrVC: UIViewController {
+    
+    private var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .brown
     }
 }

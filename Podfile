@@ -9,15 +9,15 @@ target 'Coffeee' do
 
   pod 'lottie-ios'
   pod 'SnapKit'
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'RxRealm' 
-  pod 'RealmSwift'
   pod 'PTCardTabBar'
   pod 'OnboardKit'
   pod 'FirebaseAnalytics'
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
+  pod 'FirebaseDatabase'
+  pod "FlagPhoneNumber"
+  pod 'DPOTPView'
+  pod 'SDWebImage'
 
   # Set the minimum iOS version to 13.0
 

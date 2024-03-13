@@ -40,7 +40,7 @@ private extension GuideVC {
                                      textFont: mediumTextFont)
         let onboardingVC = OnboardViewController(pageItems: [Onboard.firstPage.page, Onboard.secondPage.page, Onboard.thirdPage.page],
                                                  appearanceConfiguration: appearanceConfiguration) {
-            VCChanger.changeVC(vc: NavTabBarController())
+            AuthViewModel.checkAuthentication()
         }
         onboardingVC.modalPresentationStyle = .fullScreen
         onboardingVC.presentFrom(self, animated: true)

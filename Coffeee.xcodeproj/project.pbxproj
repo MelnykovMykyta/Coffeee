@@ -7,23 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17E77DD6F568A0556F67489C /* Pods_Coffeee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8858B69C444BD60E7C1E98C0 /* Pods_Coffeee.framework */; };
+		7716D4F22B95330900FD653C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7716D4F12B95330900FD653C /* GoogleService-Info.plist */; };
+		771B79632B9DFBF500B4ED95 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771B79622B9DFBF500B4ED95 /* NetworkService.swift */; };
+		771B79662B9DFD0300B4ED95 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771B79652B9DFD0300B4ED95 /* MenuItem.swift */; };
+		771B79692B9FBF6900B4ED95 /* MenuItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771B79682B9FBF6900B4ED95 /* MenuItemTVC.swift */; };
+		771B797F2BA0E8F300B4ED95 /* URWGeometric-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 771B797D2BA0E8F000B4ED95 /* URWGeometric-Regular.otf */; };
+		771B79802BA0E8F300B4ED95 /* URWGeometric-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 771B797E2BA0E8F200B4ED95 /* URWGeometric-SemiBold.otf */; };
+		777148372B94D9E600E4AB4D /* QrVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777148362B94D9E600E4AB4D /* QrVC.swift */; };
+		777148392B94DA0F00E4AB4D /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777148382B94DA0F00E4AB4D /* FavoritesVC.swift */; };
+		7771483B2B94E97500E4AB4D /* GuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771483A2B94E97500E4AB4D /* GuideVC.swift */; };
+		7771483D2B9507C100E4AB4D /* Onboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771483C2B9507C100E4AB4D /* Onboard.swift */; };
+		7771483F2B95174600E4AB4D /* FirstLaunchChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771483E2B95174600E4AB4D /* FirstLaunchChecker.swift */; };
+		777936352B9A83E5008C76AE /* UIViewController + DismissGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777936342B9A83E5008C76AE /* UIViewController + DismissGesture.swift */; };
+		777936382B9A955F008C76AE /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777936372B9A955F008C76AE /* AuthViewModel.swift */; };
+		77920C792B97D14C0072490A /* PhoneAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77920C782B97D14C0072490A /* PhoneAuthVC.swift */; };
+		77920C7E2B97E89B0072490A /* AuthCodeVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77920C7D2B97E89B0072490A /* AuthCodeVerificationVC.swift */; };
 		77BEB3372B94CC2800ED2C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEB3362B94CC2800ED2C8D /* AppDelegate.swift */; };
 		77BEB3392B94CC2800ED2C8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEB3382B94CC2800ED2C8D /* SceneDelegate.swift */; };
-		77BEB33B2B94CC2800ED2C8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEB33A2B94CC2800ED2C8D /* ViewController.swift */; };
-		77BEB33E2B94CC2900ED2C8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77BEB33C2B94CC2900ED2C8D /* Main.storyboard */; };
 		77BEB3402B94CC3000ED2C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77BEB33F2B94CC3000ED2C8D /* Assets.xcassets */; };
 		77BEB3432B94CC3000ED2C8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77BEB3412B94CC3000ED2C8D /* LaunchScreen.storyboard */; };
+		77BEB34F2B94CDB800ED2C8D /* AnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEB34E2B94CDB800ED2C8D /* AnimationVC.swift */; };
+		77BEB3542B94CE1900ED2C8D /* VCChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEB3532B94CE1900ED2C8D /* VCChanger.swift */; };
+		77BEB3572B94CE5900ED2C8D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEB3562B94CE5900ED2C8D /* MainVC.swift */; };
+		77BEB3592B94CEB900ED2C8D /* D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEB3582B94CEB900ED2C8D /* D.swift */; };
+		77D166C62B94D3BB00A4A8EA /* Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 77D166C52B94D3BB00A4A8EA /* Animation.json */; };
+		77D166C82B94D4EA00A4A8EA /* NavTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D166C72B94D4EA00A4A8EA /* NavTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		326A505F4154C36BFAF686F0 /* Pods-Coffeee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffeee.release.xcconfig"; path = "Target Support Files/Pods-Coffeee/Pods-Coffeee.release.xcconfig"; sourceTree = "<group>"; };
+		7716D4F12B95330900FD653C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		771B79622B9DFBF500B4ED95 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		771B79652B9DFD0300B4ED95 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		771B79682B9FBF6900B4ED95 /* MenuItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTVC.swift; sourceTree = "<group>"; };
+		771B797D2BA0E8F000B4ED95 /* URWGeometric-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "URWGeometric-Regular.otf"; sourceTree = "<group>"; };
+		771B797E2BA0E8F200B4ED95 /* URWGeometric-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "URWGeometric-SemiBold.otf"; sourceTree = "<group>"; };
+		777148362B94D9E600E4AB4D /* QrVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrVC.swift; sourceTree = "<group>"; };
+		777148382B94DA0F00E4AB4D /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		7771483A2B94E97500E4AB4D /* GuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideVC.swift; sourceTree = "<group>"; };
+		7771483C2B9507C100E4AB4D /* Onboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboard.swift; sourceTree = "<group>"; };
+		7771483E2B95174600E4AB4D /* FirstLaunchChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchChecker.swift; sourceTree = "<group>"; };
+		777936342B9A83E5008C76AE /* UIViewController + DismissGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + DismissGesture.swift"; sourceTree = "<group>"; };
+		777936372B9A955F008C76AE /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		77920C782B97D14C0072490A /* PhoneAuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthVC.swift; sourceTree = "<group>"; };
+		77920C7D2B97E89B0072490A /* AuthCodeVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeVerificationVC.swift; sourceTree = "<group>"; };
 		77BEB3332B94CC2800ED2C8D /* Coffeee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coffeee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BEB3362B94CC2800ED2C8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77BEB3382B94CC2800ED2C8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77BEB33A2B94CC2800ED2C8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		77BEB33D2B94CC2900ED2C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77BEB33F2B94CC3000ED2C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77BEB3422B94CC3000ED2C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77BEB3442B94CC3000ED2C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77BEB34E2B94CDB800ED2C8D /* AnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVC.swift; sourceTree = "<group>"; };
+		77BEB3532B94CE1900ED2C8D /* VCChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCChanger.swift; sourceTree = "<group>"; };
+		77BEB3562B94CE5900ED2C8D /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		77BEB3582B94CEB900ED2C8D /* D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D.swift; sourceTree = "<group>"; };
+		77D166C52B94D3BB00A4A8EA /* Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation.json; sourceTree = "<group>"; };
+		77D166C72B94D4EA00A4A8EA /* NavTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTabBarController.swift; sourceTree = "<group>"; };
+		8858B69C444BD60E7C1E98C0 /* Pods_Coffeee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coffeee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B22FFE0DA80B9CF5CC443096 /* Pods-Coffeee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffeee.debug.xcconfig"; path = "Target Support Files/Pods-Coffeee/Pods-Coffeee.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +73,77 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E77DD6F568A0556F67489C /* Pods_Coffeee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A3B28362F8796C40B3275BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8858B69C444BD60E7C1E98C0 /* Pods_Coffeee.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		771B79612B9DFBDE00B4ED95 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				771B79622B9DFBF500B4ED95 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		771B79642B9DFCD600B4ED95 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				771B79652B9DFD0300B4ED95 /* MenuItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		771B79672B9FBF5800B4ED95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				771B79682B9FBF6900B4ED95 /* MenuItemTVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		777936332B9A83D7008C76AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				777936342B9A83E5008C76AE /* UIViewController + DismissGesture.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		777936362B9A954C008C76AE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				777936372B9A955F008C76AE /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		77920C772B97D12F0072490A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				77920C782B97D14C0072490A /* PhoneAuthVC.swift */,
+				77920C7D2B97E89B0072490A /* AuthCodeVerificationVC.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		77BEB32A2B94CC2800ED2C8D = {
 			isa = PBXGroup;
 			children = (
 				77BEB3352B94CC2800ED2C8D /* Coffeee */,
 				77BEB3342B94CC2800ED2C8D /* Products */,
+				CE3C85C24A8E2097A229A5C6 /* Pods */,
+				1A3B28362F8796C40B3275BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +158,74 @@
 		77BEB3352B94CC2800ED2C8D /* Coffeee */ = {
 			isa = PBXGroup;
 			children = (
+				771B79672B9FBF5800B4ED95 /* Views */,
+				771B79642B9DFCD600B4ED95 /* Models */,
+				771B79612B9DFBDE00B4ED95 /* Services */,
+				777936362B9A954C008C76AE /* ViewModels */,
+				77BEB34B2B94CC6E00ED2C8D /* App */,
+				77BEB34D2B94CD4E00ED2C8D /* Controllers */,
+				777936332B9A83D7008C76AE /* Extensions */,
+				77BEB3522B94CE0C00ED2C8D /* Helpers */,
+				77BEB34C2B94CC9E00ED2C8D /* Resources */,
+			);
+			path = Coffeee;
+			sourceTree = "<group>";
+		};
+		77BEB34B2B94CC6E00ED2C8D /* App */ = {
+			isa = PBXGroup;
+			children = (
 				77BEB3362B94CC2800ED2C8D /* AppDelegate.swift */,
 				77BEB3382B94CC2800ED2C8D /* SceneDelegate.swift */,
-				77BEB33A2B94CC2800ED2C8D /* ViewController.swift */,
-				77BEB33C2B94CC2900ED2C8D /* Main.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		77BEB34C2B94CC9E00ED2C8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				771B797D2BA0E8F000B4ED95 /* URWGeometric-Regular.otf */,
+				771B797E2BA0E8F200B4ED95 /* URWGeometric-SemiBold.otf */,
+				7716D4F12B95330900FD653C /* GoogleService-Info.plist */,
 				77BEB33F2B94CC3000ED2C8D /* Assets.xcassets */,
+				77D166C52B94D3BB00A4A8EA /* Animation.json */,
 				77BEB3412B94CC3000ED2C8D /* LaunchScreen.storyboard */,
 				77BEB3442B94CC3000ED2C8D /* Info.plist */,
 			);
-			path = Coffeee;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		77BEB34D2B94CD4E00ED2C8D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				77920C772B97D12F0072490A /* Auth */,
+				77BEB34E2B94CDB800ED2C8D /* AnimationVC.swift */,
+				77BEB3562B94CE5900ED2C8D /* MainVC.swift */,
+				77D166C72B94D4EA00A4A8EA /* NavTabBarController.swift */,
+				777148362B94D9E600E4AB4D /* QrVC.swift */,
+				777148382B94DA0F00E4AB4D /* FavoritesVC.swift */,
+				7771483A2B94E97500E4AB4D /* GuideVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		77BEB3522B94CE0C00ED2C8D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				77BEB3532B94CE1900ED2C8D /* VCChanger.swift */,
+				77BEB3582B94CEB900ED2C8D /* D.swift */,
+				7771483C2B9507C100E4AB4D /* Onboard.swift */,
+				7771483E2B95174600E4AB4D /* FirstLaunchChecker.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CE3C85C24A8E2097A229A5C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B22FFE0DA80B9CF5CC443096 /* Pods-Coffeee.debug.xcconfig */,
+				326A505F4154C36BFAF686F0 /* Pods-Coffeee.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77BEB3472B94CC3000ED2C8D /* Build configuration list for PBXNativeTarget "Coffeee" */;
 			buildPhases = (
+				5F1BBB01DEC5D3DCF2FC518D /* [CP] Check Pods Manifest.lock */,
 				77BEB32F2B94CC2800ED2C8D /* Sources */,
 				77BEB3302B94CC2800ED2C8D /* Frameworks */,
 				77BEB3312B94CC2800ED2C8D /* Resources */,
+				C9B71F940464127AFFE4E329 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,35 +289,88 @@
 			buildActionMask = 2147483647;
 			files = (
 				77BEB3432B94CC3000ED2C8D /* LaunchScreen.storyboard in Resources */,
+				7716D4F22B95330900FD653C /* GoogleService-Info.plist in Resources */,
+				77D166C62B94D3BB00A4A8EA /* Animation.json in Resources */,
+				771B797F2BA0E8F300B4ED95 /* URWGeometric-Regular.otf in Resources */,
 				77BEB3402B94CC3000ED2C8D /* Assets.xcassets in Resources */,
-				77BEB33E2B94CC2900ED2C8D /* Main.storyboard in Resources */,
+				771B79802BA0E8F300B4ED95 /* URWGeometric-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F1BBB01DEC5D3DCF2FC518D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Coffeee-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9B71F940464127AFFE4E329 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coffeee/Pods-Coffeee-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coffeee/Pods-Coffeee-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Coffeee/Pods-Coffeee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		77BEB32F2B94CC2800ED2C8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77BEB33B2B94CC2800ED2C8D /* ViewController.swift in Sources */,
+				77920C792B97D14C0072490A /* PhoneAuthVC.swift in Sources */,
+				77BEB3592B94CEB900ED2C8D /* D.swift in Sources */,
+				77920C7E2B97E89B0072490A /* AuthCodeVerificationVC.swift in Sources */,
+				777148372B94D9E600E4AB4D /* QrVC.swift in Sources */,
+				777936352B9A83E5008C76AE /* UIViewController + DismissGesture.swift in Sources */,
+				771B79632B9DFBF500B4ED95 /* NetworkService.swift in Sources */,
+				77BEB34F2B94CDB800ED2C8D /* AnimationVC.swift in Sources */,
+				7771483F2B95174600E4AB4D /* FirstLaunchChecker.swift in Sources */,
+				77BEB3572B94CE5900ED2C8D /* MainVC.swift in Sources */,
 				77BEB3372B94CC2800ED2C8D /* AppDelegate.swift in Sources */,
+				777148392B94DA0F00E4AB4D /* FavoritesVC.swift in Sources */,
 				77BEB3392B94CC2800ED2C8D /* SceneDelegate.swift in Sources */,
+				77D166C82B94D4EA00A4A8EA /* NavTabBarController.swift in Sources */,
+				771B79692B9FBF6900B4ED95 /* MenuItemTVC.swift in Sources */,
+				777936382B9A955F008C76AE /* AuthViewModel.swift in Sources */,
+				77BEB3542B94CE1900ED2C8D /* VCChanger.swift in Sources */,
+				771B79662B9DFD0300B4ED95 /* MenuItem.swift in Sources */,
+				7771483D2B9507C100E4AB4D /* Onboard.swift in Sources */,
+				7771483B2B94E97500E4AB4D /* GuideVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		77BEB33C2B94CC2900ED2C8D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				77BEB33D2B94CC2900ED2C8D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		77BEB3412B94CC3000ED2C8D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -203,7 +419,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,7 +482,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -287,6 +503,7 @@
 		};
 		77BEB3482B94CC3000ED2C8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B22FFE0DA80B9CF5CC443096 /* Pods-Coffeee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -294,12 +511,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HHTA648R26;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Coffeee/Info.plist;
+				INFOPLIST_FILE = Coffeee/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,6 +533,7 @@
 		};
 		77BEB3492B94CC3000ED2C8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 326A505F4154C36BFAF686F0 /* Pods-Coffeee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,12 +541,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HHTA648R26;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Coffeee/Info.plist;
+				INFOPLIST_FILE = Coffeee/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
