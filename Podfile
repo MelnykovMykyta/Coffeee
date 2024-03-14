@@ -11,13 +11,13 @@ target 'Coffeee' do
   pod 'SnapKit'
   pod 'PTCardTabBar'
   pod 'OnboardKit'
-  pod 'FirebaseAnalytics'
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'FirebaseDatabase'
   pod "FlagPhoneNumber"
   pod 'DPOTPView'
   pod 'SDWebImage'
+  pod 'TabsPager'
 
   # Set the minimum iOS version to 13.0
 

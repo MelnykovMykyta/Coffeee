@@ -12,8 +12,6 @@ import SDWebImage
 
 class QrVC: UIViewController {
     
-    private var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .brown

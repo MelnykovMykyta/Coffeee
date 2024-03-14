@@ -26,6 +26,7 @@ struct D {
         static let fillCode = "Введіть отриманий код"
         static let verify = "Підтвердити"
         static let backButton = "Повернутись назад?"
+        static let menuLabel = "Меню"
     }
     
     struct Onboard {

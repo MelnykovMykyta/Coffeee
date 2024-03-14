@@ -10,8 +10,10 @@ import UIKit
 import SnapKit
 
 class MainVC: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .blue
         
         let signOut = UIButton(type: .system)

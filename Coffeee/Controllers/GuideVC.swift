@@ -29,8 +29,16 @@ class GuideVC: UIViewController {
 private extension GuideVC {
     
     func showOnboardingCustom() {
-        let boldTitleFont = UIFont.systemFont(ofSize: 32.0, weight: .bold)
-        let mediumTextFont = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
+       
+        var boldTitleFont = UIFont.systemFont(ofSize: 32.0, weight: .bold)
+        var mediumTextFont = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
+        
+        if let boldTitleFont_ = UIFont(name: "URWGeometric-SemiBold", size: 32),
+           let mediumTextFont_ = UIFont(name: "URWGeometric-Regular", size: 17) {
+            boldTitleFont = boldTitleFont_
+            mediumTextFont = mediumTextFont_
+        }
+        
         let appearanceConfiguration = OnboardViewController
             .AppearanceConfiguration(tintColor: D.Colors.nameColor,
                                      titleColor: D.Colors.nameColor,
@@ -38,8 +46,7 @@ private extension GuideVC {
                                      backgroundColor: D.Colors.mainBackgroundColor,
                                      titleFont: boldTitleFont,
                                      textFont: mediumTextFont)
-        let onboardingVC = OnboardViewController(pageItems: [Onboard.firstPage.page, Onboard.secondPage.page, Onboard.thirdPage.page],
-                                                 appearanceConfiguration: appearanceConfiguration) {
+        let onboardingVC = OnboardViewController(pageItems: [Onboard.firstPage.page, Onboard.secondPage.page, Onboard.thirdPage.page], appearanceConfiguration: appearanceConfiguration) {
             AuthViewModel.checkAuthentication()
         }
         onboardingVC.modalPresentationStyle = .fullScreen

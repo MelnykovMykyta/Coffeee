@@ -13,6 +13,35 @@ struct MenuItem: Codable {
     let icon: String
 }
 
-enum Menu: String {
-    case coffee, refreshers, breakfast, platters
+enum Menu: String, CaseIterable{
+    case coffee
+    case freshcoffee
+    case desserts
+    case platters
+    
+    var index: Int {
+        switch self {
+        case .coffee:
+            return 0
+        case .freshcoffee:
+            return 1
+        case .desserts:
+            return 2
+        case .platters:
+            return 3
+        }
+    }
+    
+    var desc: String {
+        switch self {
+        case .coffee:
+            return "Напої"
+        case .freshcoffee:
+            return "Прохолодні напої"
+        case .desserts:
+            return "Десерти"
+        case .platters:
+            return "Закуски"
+        }
+    }
 }

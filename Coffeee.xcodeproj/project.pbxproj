@@ -23,6 +23,8 @@
 		777936382B9A955F008C76AE /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777936372B9A955F008C76AE /* AuthViewModel.swift */; };
 		77920C792B97D14C0072490A /* PhoneAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77920C782B97D14C0072490A /* PhoneAuthVC.swift */; };
 		77920C7E2B97E89B0072490A /* AuthCodeVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77920C7D2B97E89B0072490A /* AuthCodeVerificationVC.swift */; };
+		77B1F4E72BA273930046ACA9 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1F4E62BA273930046ACA9 /* MenuVC.swift */; };
+		77B1F4F82BA2979D0046ACA9 /* MenuSectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1F4F72BA2979D0046ACA9 /* MenuSectionVC.swift */; };
 		77BEB3372B94CC2800ED2C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEB3362B94CC2800ED2C8D /* AppDelegate.swift */; };
 		77BEB3392B94CC2800ED2C8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BEB3382B94CC2800ED2C8D /* SceneDelegate.swift */; };
 		77BEB3402B94CC3000ED2C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77BEB33F2B94CC3000ED2C8D /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		777936372B9A955F008C76AE /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		77920C782B97D14C0072490A /* PhoneAuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthVC.swift; sourceTree = "<group>"; };
 		77920C7D2B97E89B0072490A /* AuthCodeVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeVerificationVC.swift; sourceTree = "<group>"; };
+		77B1F4E62BA273930046ACA9 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		77B1F4F72BA2979D0046ACA9 /* MenuSectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionVC.swift; sourceTree = "<group>"; };
 		77BEB3332B94CC2800ED2C8D /* Coffeee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coffeee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BEB3362B94CC2800ED2C8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77BEB3382B94CC2800ED2C8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,15 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		77B1F4E82BA274E40046ACA9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				77B1F4E62BA273930046ACA9 /* MenuVC.swift */,
+				77B1F4F72BA2979D0046ACA9 /* MenuSectionVC.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		77BEB32A2B94CC2800ED2C8D = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +210,7 @@
 		77BEB34D2B94CD4E00ED2C8D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				77B1F4E82BA274E40046ACA9 /* Menu */,
 				77920C772B97D12F0072490A /* Auth */,
 				77BEB34E2B94CDB800ED2C8D /* AnimationVC.swift */,
 				77BEB3562B94CE5900ED2C8D /* MainVC.swift */,
@@ -355,6 +369,7 @@
 				77BEB34F2B94CDB800ED2C8D /* AnimationVC.swift in Sources */,
 				7771483F2B95174600E4AB4D /* FirstLaunchChecker.swift in Sources */,
 				77BEB3572B94CE5900ED2C8D /* MainVC.swift in Sources */,
+				77B1F4E72BA273930046ACA9 /* MenuVC.swift in Sources */,
 				77BEB3372B94CC2800ED2C8D /* AppDelegate.swift in Sources */,
 				777148392B94DA0F00E4AB4D /* FavoritesVC.swift in Sources */,
 				77BEB3392B94CC2800ED2C8D /* SceneDelegate.swift in Sources */,
@@ -363,6 +378,7 @@
 				777936382B9A955F008C76AE /* AuthViewModel.swift in Sources */,
 				77BEB3542B94CE1900ED2C8D /* VCChanger.swift in Sources */,
 				771B79662B9DFD0300B4ED95 /* MenuItem.swift in Sources */,
+				77B1F4F82BA2979D0046ACA9 /* MenuSectionVC.swift in Sources */,
 				7771483D2B9507C100E4AB4D /* Onboard.swift in Sources */,
 				7771483B2B94E97500E4AB4D /* GuideVC.swift in Sources */,
 			);
