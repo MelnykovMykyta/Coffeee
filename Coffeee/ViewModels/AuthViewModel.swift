@@ -7,8 +7,18 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseDatabase
+import RxSwift
+import RxCocoa
 
 class AuthViewModel {
+    
+    private let usersRef = Database.database().reference().child("users")
+    
+    var userRelay = BehaviorRelay<User?>(value: nil)
+    var userObservable: Observable<User?> {
+        return userRelay.asObservable()
+    }
     
     func verifyNumber(phoneNumber: String) {
         PhoneAuthProvider.provider()
@@ -33,23 +43,69 @@ class AuthViewModel {
                 print(authError.description)
                 return
             }
-            VCChanger.changeVC(vc: NavTabBarController())
+            
+            self.checkUser()
         }
     }
     
-    static func checkAuthentication() {
+    func checkAuthentication() {
         guard Auth.auth().currentUser != nil else {
             VCChanger.changeVC(vc: PhoneAuthVC())
             return
         }
-        VCChanger.changeVC(vc: NavTabBarController())
+        
+        self.checkUser()
     }
     
     func signOut() {
         do {
             try Auth.auth().signOut()
         } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
+            print("Error signing out: %@", signOutError)
+        }
+    }
+    
+    func checkUser() {
+        guard let currentUser = Auth.auth().currentUser else { return }
+        
+        usersRef.child(currentUser.uid).observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                VCChanger.changeVC(vc: NavTabBarController())
+            } else {
+                let phoneNumber = currentUser.phoneNumber ?? ""
+                self.createUser(user: User(id: currentUser.uid, name: "", phone: phoneNumber, discount: 0))
+            }
+        }
+    }
+    
+    func createUser(user: User) {
+        usersRef.child(user.id).setValue([
+            "id": user.id,
+            "name": user.name,
+            "phone": user.phone,
+            "discount": user.discount
+        ]) { (error, _) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                VCChanger.changeVC(vc: NavTabBarController())
+            }
+        }
+    }
+    
+    func getUser() {
+        guard let currentUser = Auth.auth().currentUser else { return }
+        
+        usersRef.child(currentUser.uid).observeSingleEvent(of: .value) { [weak self] (snapshot) in
+            guard let userData = snapshot.value as? [String: Any],
+                  snapshot.exists(),
+                  let self = self else { return }
+            
+            let userFromDatabase = User(id: userData["id"] as? String ?? "",
+                                        name: userData["name"] as? String ?? "",
+                                        phone: userData["phone"] as? String ?? "",
+                                        discount: userData["discount"] as? Int ?? 0)
+            self.userRelay.accept(userFromDatabase)
         }
     }
 }

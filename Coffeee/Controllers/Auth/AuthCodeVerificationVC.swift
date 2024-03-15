@@ -83,7 +83,7 @@ extension AuthCodeVerificationVC {
         
         let label = UILabel()
         label.text = D.Texts.enterPhone
-        label.font = UIFont(name: "Impact", size: 40)
+        label.font = UIFont(name: "URWGeometric-SemiBold", size: 40)
         label.adjustsFontSizeToFitWidth = true
         label.textColor = D.Colors.standartTextColor
         label.textAlignment = .left
@@ -92,7 +92,7 @@ extension AuthCodeVerificationVC {
         
         let guideLabel = UILabel()
         guideLabel.text = D.Texts.fillCode
-        guideLabel.font = .systemFont(ofSize: 20)
+        guideLabel.font = UIFont(name: "URWGeometric-Regular", size: 20)
         guideLabel.adjustsFontSizeToFitWidth = true
         guideLabel.textColor = .black
         guideLabel.numberOfLines = 0

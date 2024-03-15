@@ -12,6 +12,7 @@ import OnboardKit
 class GuideVC: UIViewController {
     
     private var isFirstLaunch = true
+    private let viewModel = AuthViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class GuideVC: UIViewController {
 private extension GuideVC {
     
     func showOnboardingCustom() {
-       
+        
         var boldTitleFont = UIFont.systemFont(ofSize: 32.0, weight: .bold)
         var mediumTextFont = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
         
@@ -47,7 +48,7 @@ private extension GuideVC {
                                      titleFont: boldTitleFont,
                                      textFont: mediumTextFont)
         let onboardingVC = OnboardViewController(pageItems: [Onboard.firstPage.page, Onboard.secondPage.page, Onboard.thirdPage.page], appearanceConfiguration: appearanceConfiguration) {
-            AuthViewModel.checkAuthentication()
+            self.viewModel.checkAuthentication()
         }
         onboardingVC.modalPresentationStyle = .fullScreen
         onboardingVC.presentFrom(self, animated: true)

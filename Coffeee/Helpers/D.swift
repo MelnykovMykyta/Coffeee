@@ -27,6 +27,7 @@ struct D {
         static let verify = "Підтвердити"
         static let backButton = "Повернутись назад?"
         static let menuLabel = "Меню"
+        static let topQr = "Скануй QR та накопичуй знижку"
     }
     
     struct Onboard {

@@ -18,7 +18,10 @@ target 'Coffeee' do
   pod 'DPOTPView'
   pod 'SDWebImage'
   pod 'TabsPager'
-
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'SimpleQRCode'
+  
   # Set the minimum iOS version to 13.0
 
   platform :ios, '13.0'

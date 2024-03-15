@@ -77,7 +77,7 @@ extension PhoneAuthVC {
         
         let label = UILabel()
         label.text = D.Texts.enterPhone
-        label.font = UIFont(name: "Impact", size: 40)
+        label.font = UIFont(name: "URWGeometric-SemiBold", size: 40)
         label.adjustsFontSizeToFitWidth = true
         label.textColor = D.Colors.standartTextColor
         label.textAlignment = .left
@@ -86,7 +86,7 @@ extension PhoneAuthVC {
         
         let guideLabel = UILabel()
         guideLabel.text = D.Texts.fillNumber
-        guideLabel.font = .systemFont(ofSize: 20)
+        guideLabel.font = UIFont(name: "URWGeometric-Regular", size: 20)
         guideLabel.adjustsFontSizeToFitWidth = true
         guideLabel.textColor = .black
         guideLabel.numberOfLines = 2
@@ -96,6 +96,7 @@ extension PhoneAuthVC {
         phoneTF = FPNTextField()
         phoneTF.setFlag(key: .UA)
         phoneTF.font = .boldSystemFont(ofSize: 28)
+        phoneTF.hasPhoneNumberExample = false
         phoneTF.delegate = self
         sv.addArrangedSubview(phoneTF)
         
