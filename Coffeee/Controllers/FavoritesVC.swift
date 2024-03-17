@@ -22,18 +22,18 @@ class FavoritesVC: UIViewController {
         setupView()
         
         viewModel.favoriteObservable
-            .map { favorites in
-                return favorites.compactMap { $0 }
+            .compactMap { $0 }
+            .map { favoriteArray in
+                return favoriteArray.sorted { ($0.value["name"] as? String ?? "") < ($1.value["name"] as? String ?? "") }
             }
-            .map { elements in
-                return elements.sorted { $0.name < $1.name }
-            }
-            .bind(to: tableView.rx.items(cellIdentifier: "MenuItemTVC", cellType: MenuItemTVC.self)) { row, element, cell in
-                guard let url = URL(string: element.icon) else { return }
-                cell.nameLabel.text = element.name
-                cell.priceLabel.text = "\(element.price)"
-                cell.descLabel.text = element.ingredients
-                cell.image.sd_setImage(with: url)
+            .bind(to: tableView.rx.items(cellIdentifier: "MenuItemTVC", cellType: MenuItemTVC.self)) { row, itemData, cell in
+                guard let item = MenuItem.parse(from: itemData.value),
+                      let url = URL(string: item.icon) else {
+                    return
+                }
+                cell.nameLabel.text = item.name
+                cell.priceLabel.text = "\(item.price)"
+                cell.descLabel.text = item.ingredients
             }.disposed(by: disposeBag)
     }
     
@@ -53,10 +53,12 @@ extension FavoritesVC {
         label.font =  UIFont(name: "URWGeometric-SemiBold", size: 28)
         view.addSubview(label)
         
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPress(_:)))
         tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.register(MenuItemTVC.self, forCellReuseIdentifier: "MenuItemTVC")
+        tableView.addGestureRecognizer(longPressGesture)
         view.addSubview(tableView)
         
         label.snp.makeConstraints {
@@ -68,5 +70,22 @@ extension FavoritesVC {
             $0.top.equalTo(label.snp.bottom).inset(-20)
             $0.leading.trailing.bottom.equalToSuperview()
         }
+    }
+    
+    @objc private func longPress(_ gestureRecognizer: UILongPressGestureRecognizer) {
+        guard gestureRecognizer.state == .began else { return }
+        
+        let touchPoint = gestureRecognizer.location(in: tableView)
+        
+        guard let indexPath = tableView.indexPathForRow(at: touchPoint),
+              var favoriteArray = viewModel.favoriteRelay.value,
+              indexPath.row < favoriteArray.count else { return }
+        
+        favoriteArray.sort { $0.value["name"] as? String ?? "" < $1.value["name"] as? String ?? "" }
+        
+        let selectedItem = favoriteArray[indexPath.row]
+        
+        Haptic.getHaptic()
+        viewModel.removeFavorite(itemKey: selectedItem.key)
     }
 }

@@ -24,6 +24,7 @@
 		7771483F2B95174600E4AB4D /* FirstLaunchChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771483E2B95174600E4AB4D /* FirstLaunchChecker.swift */; };
 		777936352B9A83E5008C76AE /* UIViewController + DismissGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777936342B9A83E5008C76AE /* UIViewController + DismissGesture.swift */; };
 		777936382B9A955F008C76AE /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777936372B9A955F008C76AE /* AuthViewModel.swift */; };
+		77846BFF2BA780C7007B464E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77846BFE2BA780C7007B464E /* Alert.swift */; };
 		77920C792B97D14C0072490A /* PhoneAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77920C782B97D14C0072490A /* PhoneAuthVC.swift */; };
 		77920C7E2B97E89B0072490A /* AuthCodeVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77920C7D2B97E89B0072490A /* AuthCodeVerificationVC.swift */; };
 		77B1F4E72BA273930046ACA9 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1F4E62BA273930046ACA9 /* MenuVC.swift */; };
@@ -59,6 +60,7 @@
 		7771483E2B95174600E4AB4D /* FirstLaunchChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchChecker.swift; sourceTree = "<group>"; };
 		777936342B9A83E5008C76AE /* UIViewController + DismissGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + DismissGesture.swift"; sourceTree = "<group>"; };
 		777936372B9A955F008C76AE /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		77846BFE2BA780C7007B464E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		77920C782B97D14C0072490A /* PhoneAuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthVC.swift; sourceTree = "<group>"; };
 		77920C7D2B97E89B0072490A /* AuthCodeVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeVerificationVC.swift; sourceTree = "<group>"; };
 		77B1F4E62BA273930046ACA9 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				7771483C2B9507C100E4AB4D /* Onboard.swift */,
 				7771483E2B95174600E4AB4D /* FirstLaunchChecker.swift */,
 				773121F52BA7238A00F23C99 /* Haptic.swift */,
+				77846BFE2BA780C7007B464E /* Alert.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				777148392B94DA0F00E4AB4D /* FavoritesVC.swift in Sources */,
 				77BEB3392B94CC2800ED2C8D /* SceneDelegate.swift in Sources */,
 				77D166C82B94D4EA00A4A8EA /* NavTabBarController.swift in Sources */,
+				77846BFF2BA780C7007B464E /* Alert.swift in Sources */,
 				771B79692B9FBF6900B4ED95 /* MenuItemTVC.swift in Sources */,
 				777936382B9A955F008C76AE /* AuthViewModel.swift in Sources */,
 				77BEB3542B94CE1900ED2C8D /* VCChanger.swift in Sources */,

@@ -21,6 +21,7 @@ target 'Coffeee' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SimpleQRCode'
+  pod 'StatusAlert'
   
   # Set the minimum iOS version to 13.0
 

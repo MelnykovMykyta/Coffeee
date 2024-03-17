@@ -29,6 +29,7 @@ struct D {
         static let menuLabel = "Меню"
         static let topQr = "Скануй QR та накопичуй знижку"
         static let favoriteLabel = "Улюблений набір"
+        static let addMenuItem = "Додано до твого набору"
     }
     
     struct Onboard {
