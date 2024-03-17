@@ -11,6 +11,26 @@ struct MenuItem: Codable {
     let name, ingredients: String
     let price: Int
     let icon: String
+    
+    static func parse(from data: [String: Any]) -> MenuItem? {
+        guard let name = data["name"] as? String,
+              let ingredients = data["ingredients"] as? String,
+              let price = data["price"] as? Int,
+              let icon = data["icon"] as? String else {
+            return nil
+        }
+        
+        return MenuItem(name: name, ingredients: ingredients, price: price, icon: icon)
+    }
+    
+    func toDictionary() -> [String: Any] {
+        return [
+            "name": name,
+            "ingredients": ingredients,
+            "price": price,
+            "icon": icon
+        ]
+    }
 }
 
 enum Menu: String, CaseIterable{

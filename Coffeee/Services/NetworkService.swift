@@ -6,16 +6,20 @@
 //
 
 import Foundation
+import FirebaseAuth
 import FirebaseCore
 import FirebaseDatabase
+import RxSwift
+import RxCocoa
 
 class NetworkService {
     
-    static func getMenu(with items: Menu, completion: @escaping ([MenuItem]?) -> Void) {
-        let ref = Database.database().reference()
-        
-        ref.child(items.rawValue).observeSingleEvent(of: .value, with: { snapshot in
-            guard let value = snapshot.value, let data = try? JSONSerialization.data(withJSONObject: value) else {
+    private let ref = Database.database().reference()
+    
+    func getMenu(with items: Menu, completion: @escaping ([MenuItem]?) -> Void) {
+        ref.child(items.rawValue).observeSingleEvent(of: .value) { snapshot in
+            guard let value = snapshot.value,
+                  let data = try? JSONSerialization.data(withJSONObject: value) else {
                 completion(nil)
                 return
             }
@@ -26,6 +30,6 @@ class NetworkService {
             } catch {
                 completion(nil)
             }
-        })
+        }
     }
 }

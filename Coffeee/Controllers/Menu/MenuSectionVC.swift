@@ -13,9 +13,10 @@ import TabsPager
 
 class MenuSectionVC: TabsPagerContentVC {
     
-    private var tableView: UITableView!
+    private let network = NetworkService()
+    private let fovoriteViewModel = FavoriteViewModel()
     
-    // DO Rx ????
+    private var tableView: UITableView!
     
     private var menu: [MenuItem] = [] {
         didSet {
@@ -29,7 +30,7 @@ class MenuSectionVC: TabsPagerContentVC {
         
         guard let value = Menu.allCases.first(where: { $0.index == pageIndex }) else { return }
         
-        NetworkService.getMenu(with: value) { items in
+        network.getMenu(with: value) { items in
             guard let menuItems = items else { return }
             self.menu = menuItems
         }
@@ -41,12 +42,15 @@ private extension MenuSectionVC {
     func setupView() {
         view.backgroundColor = D.Colors.mainBackgroundColor
         
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPress(_:)))
+        
         tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.register(MenuItemTVC.self, forCellReuseIdentifier: "MenuItemTVC")
+        tableView.addGestureRecognizer(longPressGesture)
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints {
@@ -77,8 +81,18 @@ extension MenuSectionVC: UITableViewDataSource, UITableViewDelegate {
             cell.image.sd_setImage(with: url)
         }
         
-        cell.selectionStyle = .none
-        
         return cell
+    }
+    
+    @objc private func longPress(_ gestureRecognizer: UILongPressGestureRecognizer) {
+        guard gestureRecognizer.state == .began else { return }
+        
+        let touchPoint = gestureRecognizer.location(in: tableView)
+        
+        guard let indexPath = tableView.indexPathForRow(at: touchPoint) else { return }
+        
+        Haptic.getHaptic()
+        let selectedItem = menu[indexPath.row]
+        fovoriteViewModel.addFavorite(item: selectedItem)
     }
 }

@@ -44,8 +44,9 @@ class MenuItemTVC: UITableViewCell {
 private extension MenuItemTVC {
     
     func setupView() {
-        
         backgroundColor = .clear
+        selectionStyle = .none
+        
         view = UIView()
         view.backgroundColor = D.Colors.mainBackgroundColor
         addSubview(view)

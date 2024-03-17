@@ -28,6 +28,7 @@ struct D {
         static let backButton = "Повернутись назад?"
         static let menuLabel = "Меню"
         static let topQr = "Скануй QR та накопичуй знижку"
+        static let favoriteLabel = "Улюблений набір"
     }
     
     struct Onboard {
