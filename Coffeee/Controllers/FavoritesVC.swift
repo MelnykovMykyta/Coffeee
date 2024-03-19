@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import SDWebImage
 import RxSwift
 import RxCocoa
 
@@ -34,6 +35,7 @@ class FavoritesVC: UIViewController {
                 cell.nameLabel.text = item.name
                 cell.priceLabel.text = "\(item.price)"
                 cell.descLabel.text = item.ingredients
+                cell.image.sd_setImage(with: url)
             }.disposed(by: disposeBag)
     }
     

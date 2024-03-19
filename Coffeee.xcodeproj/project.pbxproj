@@ -14,6 +14,9 @@
 		771B79692B9FBF6900B4ED95 /* MenuItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771B79682B9FBF6900B4ED95 /* MenuItemTVC.swift */; };
 		771B797F2BA0E8F300B4ED95 /* URWGeometric-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 771B797D2BA0E8F000B4ED95 /* URWGeometric-Regular.otf */; };
 		771B79802BA0E8F300B4ED95 /* URWGeometric-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 771B797E2BA0E8F200B4ED95 /* URWGeometric-SemiBold.otf */; };
+		772567832BA906A400D1B3C6 /* ActionItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772567822BA906A400D1B3C6 /* ActionItemTVC.swift */; };
+		772567852BA90B9800D1B3C6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772567842BA90B9800D1B3C6 /* MainViewModel.swift */; };
+		772567892BA90C8000D1B3C6 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772567882BA90C8000D1B3C6 /* Action.swift */; };
 		773121F42BA3D0D500F23C99 /* UIImageView + QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773121F32BA3D0D500F23C99 /* UIImageView + QR.swift */; };
 		773121F62BA7238A00F23C99 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773121F52BA7238A00F23C99 /* Haptic.swift */; };
 		773121F82BA726A200F23C99 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773121F72BA726A200F23C99 /* FavoriteViewModel.swift */; };
@@ -50,6 +53,9 @@
 		771B79682B9FBF6900B4ED95 /* MenuItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTVC.swift; sourceTree = "<group>"; };
 		771B797D2BA0E8F000B4ED95 /* URWGeometric-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "URWGeometric-Regular.otf"; sourceTree = "<group>"; };
 		771B797E2BA0E8F200B4ED95 /* URWGeometric-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "URWGeometric-SemiBold.otf"; sourceTree = "<group>"; };
+		772567822BA906A400D1B3C6 /* ActionItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItemTVC.swift; sourceTree = "<group>"; };
+		772567842BA90B9800D1B3C6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		772567882BA90C8000D1B3C6 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		773121F32BA3D0D500F23C99 /* UIImageView + QR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + QR.swift"; sourceTree = "<group>"; };
 		773121F52BA7238A00F23C99 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		773121F72BA726A200F23C99 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 			children = (
 				771B79652B9DFD0300B4ED95 /* MenuItem.swift */,
 				77B1F4F92BA381720046ACA9 /* User.swift */,
+				772567882BA90C8000D1B3C6 /* Action.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				771B79682B9FBF6900B4ED95 /* MenuItemTVC.swift */,
+				772567822BA906A400D1B3C6 /* ActionItemTVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +149,7 @@
 			children = (
 				777936372B9A955F008C76AE /* AuthViewModel.swift */,
 				773121F72BA726A200F23C99 /* FavoriteViewModel.swift */,
+				772567842BA90B9800D1B3C6 /* MainViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -382,13 +391,16 @@
 				77920C7E2B97E89B0072490A /* AuthCodeVerificationVC.swift in Sources */,
 				777148372B94D9E600E4AB4D /* QrVC.swift in Sources */,
 				777936352B9A83E5008C76AE /* UIViewController + DismissGesture.swift in Sources */,
+				772567852BA90B9800D1B3C6 /* MainViewModel.swift in Sources */,
 				771B79632B9DFBF500B4ED95 /* NetworkService.swift in Sources */,
 				773121F82BA726A200F23C99 /* FavoriteViewModel.swift in Sources */,
 				77BEB34F2B94CDB800ED2C8D /* AnimationVC.swift in Sources */,
 				7771483F2B95174600E4AB4D /* FirstLaunchChecker.swift in Sources */,
 				77BEB3572B94CE5900ED2C8D /* MainVC.swift in Sources */,
+				772567892BA90C8000D1B3C6 /* Action.swift in Sources */,
 				77B1F4E72BA273930046ACA9 /* MenuVC.swift in Sources */,
 				77B1F4FA2BA381720046ACA9 /* User.swift in Sources */,
+				772567832BA906A400D1B3C6 /* ActionItemTVC.swift in Sources */,
 				77BEB3372B94CC2800ED2C8D /* AppDelegate.swift in Sources */,
 				777148392B94DA0F00E4AB4D /* FavoritesVC.swift in Sources */,
 				77BEB3392B94CC2800ED2C8D /* SceneDelegate.swift in Sources */,
