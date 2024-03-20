@@ -30,6 +30,11 @@ struct D {
         static let topQr = "Скануй QR та накопичуй знижку"
         static let favoriteLabel = "Улюблений набір"
         static let addMenuItem = "Додано до твого набору"
+        static let actions = "Акції та пропозиції"
+        static let discount = "Знижка"
+        static let startDate = "Початок"
+        static let finishDate = "Кінець"
+        static let desk = "Опис"
     }
     
     struct Onboard {

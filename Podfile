@@ -22,6 +22,8 @@ target 'Coffeee' do
   pod 'RxCocoa'
   pod 'SimpleQRCode'
   pod 'StatusAlert'
+  pod 'CircleProgressView'
+  pod "MBCircularProgressBar"
   
   # Set the minimum iOS version to 13.0
 

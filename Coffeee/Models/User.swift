@@ -12,11 +12,13 @@ class User {
     var name: String
     var phone: String
     var discount: Int
+    var cupsCount: Int
     
-    init(id: String, name: String, phone: String, discount: Int) {
+    init(id: String, name: String, phone: String, discount: Int, cupsCount: Int) {
         self.id = id
         self.name = name
         self.phone = phone
         self.discount = discount
+        self.cupsCount = cupsCount
     }
 }

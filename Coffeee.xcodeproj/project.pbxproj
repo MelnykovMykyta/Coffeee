@@ -17,6 +17,7 @@
 		772567832BA906A400D1B3C6 /* ActionItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772567822BA906A400D1B3C6 /* ActionItemTVC.swift */; };
 		772567852BA90B9800D1B3C6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772567842BA90B9800D1B3C6 /* MainViewModel.swift */; };
 		772567892BA90C8000D1B3C6 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772567882BA90C8000D1B3C6 /* Action.swift */; };
+		7725678B2BAA4C4F00D1B3C6 /* progressAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 7725678A2BAA4C4F00D1B3C6 /* progressAnimation.json */; };
 		773121F42BA3D0D500F23C99 /* UIImageView + QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773121F32BA3D0D500F23C99 /* UIImageView + QR.swift */; };
 		773121F62BA7238A00F23C99 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773121F52BA7238A00F23C99 /* Haptic.swift */; };
 		773121F82BA726A200F23C99 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773121F72BA726A200F23C99 /* FavoriteViewModel.swift */; };
@@ -27,6 +28,7 @@
 		7771483F2B95174600E4AB4D /* FirstLaunchChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771483E2B95174600E4AB4D /* FirstLaunchChecker.swift */; };
 		777936352B9A83E5008C76AE /* UIViewController + DismissGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777936342B9A83E5008C76AE /* UIViewController + DismissGesture.swift */; };
 		777936382B9A955F008C76AE /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777936372B9A955F008C76AE /* AuthViewModel.swift */; };
+		777C71BB2BAA72470055DE8B /* ActionInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C71BA2BAA72470055DE8B /* ActionInfoVC.swift */; };
 		77846BFF2BA780C7007B464E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77846BFE2BA780C7007B464E /* Alert.swift */; };
 		77920C792B97D14C0072490A /* PhoneAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77920C782B97D14C0072490A /* PhoneAuthVC.swift */; };
 		77920C7E2B97E89B0072490A /* AuthCodeVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77920C7D2B97E89B0072490A /* AuthCodeVerificationVC.swift */; };
@@ -56,6 +58,7 @@
 		772567822BA906A400D1B3C6 /* ActionItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItemTVC.swift; sourceTree = "<group>"; };
 		772567842BA90B9800D1B3C6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		772567882BA90C8000D1B3C6 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		7725678A2BAA4C4F00D1B3C6 /* progressAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = progressAnimation.json; sourceTree = "<group>"; };
 		773121F32BA3D0D500F23C99 /* UIImageView + QR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + QR.swift"; sourceTree = "<group>"; };
 		773121F52BA7238A00F23C99 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		773121F72BA726A200F23C99 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		7771483E2B95174600E4AB4D /* FirstLaunchChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchChecker.swift; sourceTree = "<group>"; };
 		777936342B9A83E5008C76AE /* UIViewController + DismissGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + DismissGesture.swift"; sourceTree = "<group>"; };
 		777936372B9A955F008C76AE /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		777C71BA2BAA72470055DE8B /* ActionInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionInfoVC.swift; sourceTree = "<group>"; };
 		77846BFE2BA780C7007B464E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		77920C782B97D14C0072490A /* PhoneAuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthVC.swift; sourceTree = "<group>"; };
 		77920C7D2B97E89B0072490A /* AuthCodeVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeVerificationVC.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 				7716D4F12B95330900FD653C /* GoogleService-Info.plist */,
 				77BEB33F2B94CC3000ED2C8D /* Assets.xcassets */,
 				77D166C52B94D3BB00A4A8EA /* Animation.json */,
+				7725678A2BAA4C4F00D1B3C6 /* progressAnimation.json */,
 				77BEB3412B94CC3000ED2C8D /* LaunchScreen.storyboard */,
 				77BEB3442B94CC3000ED2C8D /* Info.plist */,
 			);
@@ -240,6 +245,7 @@
 				777148362B94D9E600E4AB4D /* QrVC.swift */,
 				777148382B94DA0F00E4AB4D /* FavoritesVC.swift */,
 				7771483A2B94E97500E4AB4D /* GuideVC.swift */,
+				777C71BA2BAA72470055DE8B /* ActionInfoVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -328,6 +334,7 @@
 			files = (
 				77BEB3432B94CC3000ED2C8D /* LaunchScreen.storyboard in Resources */,
 				7716D4F22B95330900FD653C /* GoogleService-Info.plist in Resources */,
+				7725678B2BAA4C4F00D1B3C6 /* progressAnimation.json in Resources */,
 				77D166C62B94D3BB00A4A8EA /* Animation.json in Resources */,
 				771B797F2BA0E8F300B4ED95 /* URWGeometric-Regular.otf in Resources */,
 				77BEB3402B94CC3000ED2C8D /* Assets.xcassets in Resources */,
@@ -402,6 +409,7 @@
 				77B1F4FA2BA381720046ACA9 /* User.swift in Sources */,
 				772567832BA906A400D1B3C6 /* ActionItemTVC.swift in Sources */,
 				77BEB3372B94CC2800ED2C8D /* AppDelegate.swift in Sources */,
+				777C71BB2BAA72470055DE8B /* ActionInfoVC.swift in Sources */,
 				777148392B94DA0F00E4AB4D /* FavoritesVC.swift in Sources */,
 				77BEB3392B94CC2800ED2C8D /* SceneDelegate.swift in Sources */,
 				77D166C82B94D4EA00A4A8EA /* NavTabBarController.swift in Sources */,

@@ -73,7 +73,7 @@ class AuthViewModel {
                 VCChanger.changeVC(vc: NavTabBarController())
             } else {
                 let phoneNumber = currentUser.phoneNumber ?? ""
-                self.createUser(user: User(id: currentUser.uid, name: "", phone: phoneNumber, discount: 0))
+                self.createUser(user: User(id: currentUser.uid, name: "", phone: phoneNumber, discount: 10, cupsCount: 0))
             }
         }
     }
@@ -83,7 +83,8 @@ class AuthViewModel {
             "id": user.id,
             "name": user.name,
             "phone": user.phone,
-            "discount": user.discount
+            "discount": user.discount,
+            "cupsCount": user.cupsCount
         ]) { (error, _) in
             if let error = error {
                 print(error.localizedDescription)
@@ -104,7 +105,8 @@ class AuthViewModel {
             let userFromDatabase = User(id: userData["id"] as? String ?? "",
                                         name: userData["name"] as? String ?? "",
                                         phone: userData["phone"] as? String ?? "",
-                                        discount: userData["discount"] as? Int ?? 0)
+                                        discount: userData["discount"] as? Int ?? 0,
+                                        cupsCount: userData["cupsCount"] as? Int ?? 0)
             self.userRelay.accept(userFromDatabase)
         }
     }

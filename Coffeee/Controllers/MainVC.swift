@@ -8,13 +8,30 @@
 import Foundation
 import UIKit
 import SnapKit
+import Lottie
+import MBCircularProgressBar
+import FirebaseAuth
+import RxSwift
+import RxCocoa
 
+protocol ActionDelegate: AnyObject {
+    func didSelectAction(_ action: Action)
+}
 
 class MainVC: UIViewController {
     
-    private let viewModel = MainViewModel()
+    private let mainViewModel = MainViewModel()
     private let authViewModel = AuthViewModel()
+    private let disposeBag = DisposeBag()
     private var user: User?
+    weak var delegateAction: ActionDelegate?
+    
+    private var greatingLabel: UILabel!
+    private var logoutButton: UIButton!
+    private var infoView: UIView!
+    private var progressView: MBCircularProgressBarView!
+    private var animationProgressView: LottieAnimationView!
+    private var discountCountLabel: UILabel!
     private var tableView: UITableView!
     
     private var actions: [Action] = [] {
@@ -27,13 +44,29 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         setupView()
         
-        viewModel.getActions() { items in
+        authViewModel.userObservable
+            .subscribe(onNext: { [weak self] user in
+                guard let user = user else { return }
+                self?.user = user
+                self?.greatingLabel.text = "Привіт, \(user.name) 👋"
+                self?.discountCountLabel.text = "\(user.discount)%"
+                self?.animation()
+            }).disposed(by: disposeBag)
+        
+        mainViewModel.getActions() { items in
             guard let actions = items else { return }
             self.actions = actions
         }
+        
+        authViewModel.getUser()
     }
     
-    @objc func tap() {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animation()
+    }
+    
+    @objc func logout() {
         authViewModel.signOut()
         VCChanger.changeVC(vc: PhoneAuthVC())
     }
@@ -42,7 +75,54 @@ class MainVC: UIViewController {
 private extension MainVC {
     
     func setupView() {
-        view.backgroundColor = .blue
+        view.backgroundColor = D.Colors.mainBackgroundColor
+        
+        logoutButton = UIButton(type: .system)
+        logoutButton.setImage(UIImage(named: "logout"), for: .normal)
+        logoutButton.tintColor = .black
+        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+        view.addSubview(logoutButton)
+        
+        greatingLabel = UILabel()
+        greatingLabel.textColor = .black
+        greatingLabel.font = UIFont(name: "URWGeometric-SemiBold", size: 30)
+        greatingLabel.adjustsFontSizeToFitWidth = true
+        greatingLabel.adjustsFontForContentSizeCategory = true
+        view.addSubview(greatingLabel)
+        
+        infoView = UIView()
+        infoView.backgroundColor = D.Colors.mainBackgroundColor
+        view.addSubview(infoView)
+        
+        progressView = MBCircularProgressBarView()
+        progressView.progressLineWidth = 10
+        progressView.progressColor = D.Colors.nameColor
+        progressView.progressAngle = 75
+        progressView.progressStrokeColor = D.Colors.nameColor
+        progressView.showUnitString = false
+        progressView.showValueString = false
+        progressView.backgroundColor = .clear
+        infoView.addSubview(progressView)
+        
+        animationProgressView = LottieAnimationView(name: "progressAnimation")
+        animationProgressView.contentMode = .scaleAspectFit
+        animationProgressView.animationSpeed = 2
+        infoView.addSubview(animationProgressView)
+        
+        discountCountLabel = UILabel()
+        discountCountLabel.textColor = D.Colors.nameColor
+        discountCountLabel.font = UIFont(name: "URWGeometric-SemiBold", size: 28)
+        discountCountLabel.adjustsFontSizeToFitWidth = true
+        discountCountLabel.adjustsFontForContentSizeCategory = true
+        infoView.addSubview(discountCountLabel)
+        
+        let discountLabel = UILabel()
+        discountLabel.text = D.Texts.discount
+        discountLabel.textColor = D.Colors.nameColor
+        discountLabel.font = UIFont(name: "URWGeometric-SemiBold", size: 32)
+        discountLabel.adjustsFontSizeToFitWidth = true
+        discountLabel.adjustsFontForContentSizeCategory = true
+        infoView.addSubview(discountLabel)
         
         tableView = UITableView()
         tableView.delegate = self
@@ -52,16 +132,56 @@ private extension MainVC {
         tableView.register(ActionItemTVC.self, forCellReuseIdentifier: "ActionItemTVC")
         view.addSubview(tableView)
         
-        tableView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+        logoutButton.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(20)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.size.equalTo(40)
         }
         
-//        let signOut = UIButton(type: .system)
-//        signOut.setTitle("Вихід", for: .normal)
-//        signOut.addTarget(self, action: #selector(tap), for: .touchUpInside)
-//        view.addSubview(signOut)
-//        
-//        signOut.snp.makeConstraints { $0.center.equalToSuperview() }
+        greatingLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(40)
+            $0.leading.equalToSuperview().inset(20)
+            $0.trailing.equalTo(logoutButton.snp.leading).inset(20)
+        }
+        
+        infoView.snp.makeConstraints {
+            $0.height.equalTo(infoView.snp.width).multipliedBy(0.6)
+            $0.top.equalTo(greatingLabel.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+        }
+        
+        progressView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.height.equalToSuperview().multipliedBy(0.8)
+            $0.width.equalTo(progressView.snp.height)
+        }
+        
+        animationProgressView.snp.makeConstraints {
+            $0.edges.equalTo(progressView.snp.edges).inset(20)
+        }
+        
+        discountCountLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+        
+        discountLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(animationProgressView.snp.bottom).inset(-20)
+        }
+        
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(infoView.snp.bottom).inset(-20)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+    
+    func animation() {
+        guard let user = user else { return }
+        let progress: Double = Double(user.discount) / 100.0
+        animationProgressView.play(toProgress: progress, loopMode: .playOnce)
+        UIView.animate(withDuration: 1.0, animations: {
+            self.progressView.value = CGFloat(progress) * 100.0
+        })
     }
 }
 
@@ -84,5 +204,36 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        headerView.backgroundColor = D.Colors.mainBackgroundColor
+        
+        let headerLabel = UILabel()
+        headerLabel.text = D.Texts.actions
+        headerLabel.font = UIFont(name: "URWGeometric-SemiBold", size: 20)
+        headerLabel.textColor = .black.withAlphaComponent(0.5)
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerView.addSubview(headerLabel)
+        
+        headerLabel.snp.makeConstraints {
+            $0.centerY.equalTo(headerView)
+            $0.leading.equalTo(headerView).inset(20)
+        }
+        
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let action = actions[indexPath.row]
+        let vc = ActionInfoVC()
+        delegateAction = vc
+        present(vc, animated: true)
+        delegateAction?.didSelectAction(action)
     }
 }
