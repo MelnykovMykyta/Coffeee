@@ -19,11 +19,11 @@ enum Onboard {
         
         switch self {
         case .firstPage:
-            return OnboardPage(title: D.Onboard.firstPageTitle, imageName: "1", description: D.Onboard.firstPageDesc, advanceButtonTitle: D.Onboard.nextButton)
+            return OnboardPage(title: D.Onboard.firstPageTitle, imageName: "favoriteOnboard", description: D.Onboard.firstPageDesc, advanceButtonTitle: D.Onboard.nextButton)
         case .secondPage:
-            return OnboardPage(title: D.Onboard.secondPageTitle, imageName: "1", description: D.Onboard.secondPageDesc, advanceButtonTitle: D.Onboard.nextButton)
+            return OnboardPage(title: D.Onboard.secondPageTitle, imageName: "progressOnboard", description: D.Onboard.secondPageDesc, advanceButtonTitle: D.Onboard.nextButton)
         case .thirdPage:
-            return OnboardPage(title: D.Onboard.thirdPageTitle, imageName: "1", description: D.Onboard.thirdPageDesc, advanceButtonTitle: D.Onboard.doneButton)
+            return OnboardPage(title: D.Onboard.thirdPageTitle, imageName: "actionOnboard", description: D.Onboard.thirdPageDesc, advanceButtonTitle: D.Onboard.doneButton)
         }
     }
 }

@@ -68,12 +68,27 @@ class AuthViewModel {
     func checkUser() {
         guard let currentUser = Auth.auth().currentUser else { return }
         
-        usersRef.child(currentUser.uid).observeSingleEvent(of: .value) { (snapshot) in
+        usersRef.child(currentUser.uid).observeSingleEvent(of: .value) { [weak self] (snapshot) in
+            guard let self = self else { return }
+            
             if snapshot.exists() {
                 VCChanger.changeVC(vc: NavTabBarController())
             } else {
-                let phoneNumber = currentUser.phoneNumber ?? ""
-                self.createUser(user: User(id: currentUser.uid, name: "", phone: phoneNumber, discount: 10, cupsCount: 0))
+                
+                guard let viewController = UIApplication.shared.windows.first?.rootViewController else { return }
+                
+                let alert = UIAlertController(title: D.Texts.enterName, message: nil, preferredStyle: .alert)
+                alert.addTextField { textField in
+                    textField.placeholder = D.Texts.namePlaceholder
+                }
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                    guard let name = alert.textFields?.first?.text else { return }
+                    
+                    let phoneNumber = currentUser.phoneNumber ?? ""
+                    self.createUser(user: User(id: currentUser.uid, name: name, phone: phoneNumber, discount: 10, cupsCount: 0))
+                })
+                viewController.present(alert, animated: true, completion: nil)
             }
         }
     }

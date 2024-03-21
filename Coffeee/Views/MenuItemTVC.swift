@@ -18,6 +18,7 @@ class MenuItemTVC: UITableViewCell {
     var priceLabel: UILabel!
     var priceNameLabel: UILabel!
     var currencyLabel: UILabel!
+    var likeView: UIImageView!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -89,6 +90,13 @@ private extension MenuItemTVC {
         image.contentMode = .scaleAspectFit
         view.addSubview(image)
         
+        likeView = UIImageView()
+        likeView.image = UIImage(systemName: "heart.fill")
+        likeView.tintColor = UIColor(red: 139/255, green: 0, blue: 0, alpha: 1.0)
+        likeView.contentMode = .scaleAspectFit
+        likeView.isHidden = true
+        view.addSubview(likeView)
+        
         view.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
@@ -126,6 +134,12 @@ private extension MenuItemTVC {
         image.snp.makeConstraints {
             $0.top.trailing.bottom.equalToSuperview()
             $0.leading.equalTo(nameLabel.snp.trailing)
+        }
+        
+        likeView.snp.makeConstraints {
+            $0.width.equalTo(view.snp.width).multipliedBy(0.1)
+            $0.height.equalTo(likeView.snp.width)
+            $0.trailing.bottom.equalToSuperview().inset(20)
         }
     }
 }

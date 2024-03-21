@@ -36,6 +36,7 @@ class FavoritesVC: UIViewController {
                 cell.priceLabel.text = "\(item.price)"
                 cell.descLabel.text = item.ingredients
                 cell.image.sd_setImage(with: url)
+                cell.likeView.isHidden = false
             }.disposed(by: disposeBag)
     }
     
