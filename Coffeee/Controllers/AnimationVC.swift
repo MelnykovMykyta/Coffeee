@@ -53,7 +53,7 @@ private extension AnimationVC {
             $0.leading.trailing.equalToSuperview().inset(20)
         }
     }
-    
+   
     func animation() {
         animatedView.play(fromProgress: 0, toProgress: 0.9) { completed in
             UIView.animate(withDuration: 1, animations: {

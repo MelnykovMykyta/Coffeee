@@ -24,6 +24,7 @@ class MainVC: UIViewController {
     private let authViewModel = AuthViewModel()
     private let disposeBag = DisposeBag()
     private var user: User?
+    private var actions: [Action] = []
     weak var delegateAction: ActionDelegate?
     
     private var greatingLabel: UILabel!
@@ -33,12 +34,6 @@ class MainVC: UIViewController {
     private var animationProgressView: LottieAnimationView!
     private var discountCountLabel: UILabel!
     private var tableView: UITableView!
-    
-    private var actions: [Action] = [] {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +51,7 @@ class MainVC: UIViewController {
         mainViewModel.getActions() { items in
             guard let actions = items else { return }
             self.actions = actions
+            self.tableView.reloadData()
         }
         
         authViewModel.getUser()
@@ -77,18 +73,22 @@ private extension MainVC {
     func setupView() {
         view.backgroundColor = D.Colors.mainBackgroundColor
         
+        let topView = UIView()
+        topView.backgroundColor = D.Colors.mainBackgroundColor
+        view.addSubview(topView)
+        
         logoutButton = UIButton(type: .system)
         logoutButton.setImage(UIImage(named: "logout"), for: .normal)
         logoutButton.tintColor = .black
         logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
-        view.addSubview(logoutButton)
+        topView.addSubview(logoutButton)
         
         greatingLabel = UILabel()
         greatingLabel.textColor = .black
         greatingLabel.font = UIFont(name: "URWGeometric-SemiBold", size: 30)
         greatingLabel.adjustsFontSizeToFitWidth = true
         greatingLabel.adjustsFontForContentSizeCategory = true
-        view.addSubview(greatingLabel)
+        topView.addSubview(greatingLabel)
         
         infoView = UIView()
         infoView.backgroundColor = D.Colors.mainBackgroundColor
@@ -98,6 +98,7 @@ private extension MainVC {
         progressView.progressLineWidth = 10
         progressView.progressColor = D.Colors.nameColor
         progressView.progressAngle = 75
+        progressView.value = 0
         progressView.progressStrokeColor = D.Colors.nameColor
         progressView.showUnitString = false
         progressView.showValueString = false
@@ -125,6 +126,7 @@ private extension MainVC {
         infoView.addSubview(discountLabel)
         
         tableView = UITableView()
+        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -132,21 +134,27 @@ private extension MainVC {
         tableView.register(ActionItemTVC.self, forCellReuseIdentifier: "ActionItemTVC")
         view.addSubview(tableView)
         
-        logoutButton.snp.makeConstraints {
+        topView.snp.makeConstraints {
+            $0.height.equalTo(topView.snp.width).multipliedBy(0.2)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(20)
-            $0.trailing.equalToSuperview().inset(20)
-            $0.size.equalTo(40)
+            $0.leading.trailing.equalToSuperview().inset(20)
+        }
+        
+        logoutButton.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview()
+            $0.width.equalTo(logoutButton.snp.height)
         }
         
         greatingLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(40)
-            $0.leading.equalToSuperview().inset(20)
+            $0.top.bottom.equalToSuperview()
+            $0.leading.equalToSuperview()
             $0.trailing.equalTo(logoutButton.snp.leading).inset(20)
         }
         
         infoView.snp.makeConstraints {
-            $0.height.equalTo(infoView.snp.width).multipliedBy(0.6)
-            $0.top.equalTo(greatingLabel.snp.bottom)
+            $0.height.equalTo(infoView.snp.width).multipliedBy(0.5)
+            $0.top.equalTo(topView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
         
@@ -197,6 +205,7 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         let action = actions[indexPath.row]
+        cell.image.image = nil
         cell.nameLabel.text = action.name
         
         if let url = URL(string: action.icon) {

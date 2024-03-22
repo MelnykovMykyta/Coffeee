@@ -44,14 +44,14 @@ private extension ActionInfoVC {
         
         startDate = UILabel()
         startDate.textColor = .black
-        startDate.font = UIFont(name: "URWGeometric-SemiBold", size: 28)
+        startDate.font = UIFont(name: "URWGeometric-SemiBold", size: 24)
         startDate.adjustsFontSizeToFitWidth = true
         startDate.adjustsFontForContentSizeCategory = true
         view.addSubview(startDate)
         
         finishDate = UILabel()
         finishDate.textColor = .black
-        finishDate.font = UIFont(name: "URWGeometric-SemiBold", size: 28)
+        finishDate.font = UIFont(name: "URWGeometric-SemiBold", size: 24)
         finishDate.adjustsFontSizeToFitWidth = true
         finishDate.adjustsFontForContentSizeCategory = true
         view.addSubview(finishDate)
@@ -59,7 +59,7 @@ private extension ActionInfoVC {
         let deskLabel = UILabel()
         deskLabel.text = D.Texts.desk
         deskLabel.textColor = .black.withAlphaComponent(0.5)
-        deskLabel.font = UIFont(name: "URWGeometric-SemiBold", size: 28)
+        deskLabel.font = UIFont(name: "URWGeometric-SemiBold", size: 24)
         deskLabel.adjustsFontSizeToFitWidth = true
         deskLabel.adjustsFontForContentSizeCategory = true
         view.addSubview(deskLabel)
@@ -67,9 +67,9 @@ private extension ActionInfoVC {
         desk = UILabel()
         desk.textColor = .black
         desk.numberOfLines = 0
-        desk.textAlignment = .left
+        desk.textAlignment = .justified
         desk.lineBreakMode = .byWordWrapping
-        desk.font = UIFont(name: "URWGeometric-Regular", size: 28)
+        desk.font = UIFont(name: "URWGeometric-Regular", size: 20)
         desk.adjustsFontSizeToFitWidth = true
         desk.adjustsFontForContentSizeCategory = true
         view.addSubview(desk)
@@ -80,22 +80,22 @@ private extension ActionInfoVC {
         }
         
         startDate.snp.makeConstraints {
-            $0.top.equalTo(image.snp.bottom).inset(-20)
+            $0.top.equalTo(image.snp.bottom).inset(-40)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
         finishDate.snp.makeConstraints {
-            $0.top.equalTo(startDate.snp.bottom).inset(-10)
+            $0.top.equalTo(startDate.snp.bottom).inset(-20)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
         deskLabel.snp.makeConstraints {
-            $0.top.equalTo(finishDate.snp.bottom).inset(-20)
+            $0.top.equalTo(finishDate.snp.bottom).inset(-40)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
         desk.snp.makeConstraints {
-            $0.top.equalTo(deskLabel.snp.bottom).inset(-10)
+            $0.top.equalTo(deskLabel.snp.bottom).inset(-20)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
     }

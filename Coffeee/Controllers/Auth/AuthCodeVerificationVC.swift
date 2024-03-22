@@ -116,9 +116,10 @@ extension AuthCodeVerificationVC {
         sv.addArrangedSubview(codeTF)
         
         button = UIButton(type: .system)
+        if let font = UIFont(name: "URWGeometric-Regular", size: 20) {
+            button.titleLabel?.font = font
+        }
         button.backgroundColor = D.Colors.mainBackgroundColor
-        button.layer.borderWidth = 1
-        button.layer.borderColor = D.Colors.nameColor.cgColor
         button.tintColor = D.Colors.nameColor
         button.setTitle(D.Texts.verify, for: .normal)
         button.isEnabled = false
@@ -165,7 +166,7 @@ extension AuthCodeVerificationVC {
         
         backButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(sv.snp.bottom).inset(-80)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(20)
         }
     }
 }

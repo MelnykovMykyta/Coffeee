@@ -1,28 +1,35 @@
 //
-//  PhoneAuthVC.swift
+//  NameFormVC.swift
 //  Coffeee
 //
-//  Created by Nikita Melnikov on 06.03.2024.
+//  Created by Nikita Melnikov on 22.03.2024.
 //
 
 import Foundation
 import UIKit
 import SnapKit
-import FlagPhoneNumber
+import RxSwift
+import RxCocoa
 
-class PhoneAuthVC: UIViewController {
+class NameFormVC: UIViewController {
     
     private let viewModel = AuthViewModel()
+    private let disposeBag = DisposeBag()
     
     private var contentView: UIView!
-    private var phoneTF: FPNTextField!
+    private var nameTF: UITextField!
     private var button: UIButton!
-    private var phoneNumber: String = ""
+    private var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         addKeyboardDismissGesture()
+        
+        nameTF.rx.text.orEmpty
+            .map { !$0.isEmpty }
+            .bind(to: button.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
     
     override func viewDidLayoutSubviews() {
@@ -31,30 +38,18 @@ class PhoneAuthVC: UIViewController {
         contentView.layer.cornerRadius = 20
         contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-}
-
-extension PhoneAuthVC: FPNTextFieldDelegate {
     
-    func fpnDidValidatePhoneNumber(textField: FPNTextField, isValid: Bool) {
-        if isValid {
-            guard let number = phoneTF.getFormattedPhoneNumber(format: .E164) else { return }
-            phoneTF.resignFirstResponder()
-            phoneNumber = number
-            button.isEnabled = true
-        } else {
-            button.isEnabled = false
-        }
+    @objc private func createUser() {
+        guard let name = nameTF.text else { return }
+        viewModel.createUser(name: name)
     }
     
-    @objc private func sendCode() {
-        viewModel.verifyNumber(phoneNumber: phoneNumber)
+    @objc private func back() {
+        VCChanger.changeVCWithoutDuration(vc: PhoneAuthVC())
     }
-    
-    func fpnDisplayCountryList() {}
-    func fpnDidSelectCountry(name: String, dialCode: String, code: String) {}
 }
 
-extension PhoneAuthVC {
+extension NameFormVC {
     private func setupView() {
         
         view.backgroundColor = D.Colors.nameColor
@@ -76,7 +71,7 @@ extension PhoneAuthVC {
         view.addSubview(sv)
         
         let label = UILabel()
-        label.text = D.Texts.enterPhone
+        label.text = D.Texts.enterName
         label.font = UIFont(name: "URWGeometric-SemiBold", size: 40)
         label.adjustsFontSizeToFitWidth = true
         label.textColor = D.Colors.standartTextColor
@@ -85,7 +80,7 @@ extension PhoneAuthVC {
         view.addSubview(label)
         
         let guideLabel = UILabel()
-        guideLabel.text = D.Texts.fillNumber
+        guideLabel.text = D.Texts.fillName
         guideLabel.font = UIFont(name: "URWGeometric-Regular", size: 20)
         guideLabel.adjustsFontSizeToFitWidth = true
         guideLabel.textColor = .black
@@ -93,13 +88,11 @@ extension PhoneAuthVC {
         guideLabel.textAlignment = .center
         sv.addArrangedSubview(guideLabel)
         
-        phoneTF = FPNTextField()
-        phoneTF.setFlag(key: .UA)
-        phoneTF.font = .boldSystemFont(ofSize: 28)
-        phoneTF.hasPhoneNumberExample = false
-        phoneTF.placeholder = ""
-        phoneTF.delegate = self
-        sv.addArrangedSubview(phoneTF)
+        nameTF = UITextField()
+        nameTF.placeholder = D.Texts.namePlaceholder
+        nameTF.textAlignment = .center
+        nameTF.font = .boldSystemFont(ofSize: 28)
+        sv.addArrangedSubview(nameTF)
         
         button = UIButton(type: .system)
         if let font = UIFont(name: "URWGeometric-Regular", size: 20) {
@@ -107,10 +100,15 @@ extension PhoneAuthVC {
         }
         button.backgroundColor = D.Colors.mainBackgroundColor
         button.tintColor = D.Colors.nameColor
-        button.setTitle(D.Texts.authPhoneBtn, for: .normal)
+        button.setTitle(D.Texts.verify, for: .normal)
         button.isEnabled = false
-        button.addTarget(self, action: #selector(sendCode), for: .touchUpInside)
+        button.addTarget(self, action: #selector(createUser), for: .touchUpInside)
         sv.addArrangedSubview(button)
+        
+        backButton = UIButton(type: .system)
+        backButton.setTitle(D.Texts.backButton, for: .normal)
+        backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+        view.addSubview(backButton)
         
         sv.snp.makeConstraints {
             $0.center.equalToSuperview()
@@ -135,7 +133,7 @@ extension PhoneAuthVC {
             $0.bottom.equalTo(contentView.snp.top)
         }
         
-        phoneTF.snp.makeConstraints {
+        nameTF.snp.makeConstraints {
             $0.height.equalTo(80)
             $0.width.equalTo(sv.snp.width)
         }
@@ -143,6 +141,11 @@ extension PhoneAuthVC {
         button.snp.makeConstraints {
             $0.height.equalTo(40)
             $0.width.equalTo(sv.snp.width)
+        }
+        
+        backButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(20)
         }
     }
 }
