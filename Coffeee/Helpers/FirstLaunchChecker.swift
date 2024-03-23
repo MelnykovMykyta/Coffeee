@@ -17,6 +17,7 @@ class FirstLaunchChecker {
             AuthViewModel().checkAuthentication()
         } else {
             UserDefaults.standard.set(true, forKey: "firstLaunch")
+            AuthViewModel().signOut()
             VCChanger.changeVC(vc: GuideVC())
         }
     }

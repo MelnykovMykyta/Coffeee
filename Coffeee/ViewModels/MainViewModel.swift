@@ -10,7 +10,6 @@ import FirebaseAuth
 import FirebaseCore
 import FirebaseDatabase
 
-
 class MainViewModel {
     
     private let ref = Database.database().reference()

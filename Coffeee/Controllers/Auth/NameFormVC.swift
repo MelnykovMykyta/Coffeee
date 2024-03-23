@@ -45,6 +45,7 @@ class NameFormVC: UIViewController {
     }
     
     @objc private func back() {
+        viewModel.signOut()
         VCChanger.changeVCWithoutDuration(vc: PhoneAuthVC())
     }
 }

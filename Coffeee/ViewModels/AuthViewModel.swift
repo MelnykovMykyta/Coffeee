@@ -64,7 +64,7 @@ class AuthViewModel {
             print("Error signing out: %@", signOutError)
         }
     }
-    
+   
     func checkUser() {
         guard let currentUser = Auth.auth().currentUser else { return }
         
@@ -72,7 +72,7 @@ class AuthViewModel {
             if snapshot.exists() {
                 VCChanger.changeVC(vc: NavTabBarController())
             } else {
-                VCChanger.changeVC(vc: NameFormVC())
+                VCChanger.changeVCWithoutDuration(vc: NameFormVC())
             }
         }
     }
